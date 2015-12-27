@@ -15,10 +15,11 @@ class listener(StreamListener):
 
             tweet = data.split(',"text":"')[1].split('","source')[0]
             print tweet
-            saveThis = str(time.time()) + '::'+ tweet
-            saveFile = open('twitDB2.csv','a')
+            saveThis = data 
+            #str(time.time()) + '::'+ tweet
+            saveFile = open('output_new.txt','a')
             saveFile.write(saveThis)
-            saveFile.write('\n')
+            #saveFile.write('\n')
             saveFile.close()
             return True
         except BaseException, e:
